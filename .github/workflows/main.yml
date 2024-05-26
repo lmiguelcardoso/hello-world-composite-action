@@ -6,6 +6,11 @@ jobs:
     name: A job to say hello
     steps:
       - uses: actions/checkout@v4
+      - name: Make it runnable
+        shell: bash
+        run: |
+          cd ${{ github.action_path }}
+          chmod +x goodbye.sh
       - id: foo
         uses: lmiguelcardoso/hello-world-composite-action@v1
         with:
