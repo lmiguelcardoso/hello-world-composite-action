@@ -12,6 +12,14 @@ outputs:
 runs:
   using: "composite"
   steps:
+    - name: Make it runnable
+      shell: bash
+      run: |
+        cd "$action_path"
+        chmod +x goodbye.sh
+      env:
+        action_path:  ${{ github.action_path }}
+
     - name: Set Greeting
       run: echo "Hello $INPUT_WHO_TO_GREET."
       shell: bash
