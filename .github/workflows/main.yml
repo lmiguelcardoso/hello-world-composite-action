@@ -9,8 +9,10 @@ jobs:
       - name: Make it runnable
         shell: bash
         run: |
-          cd ${{ github.action_path }}
+          cd "$action_path"
           chmod +x goodbye.sh
+        env:
+          action_path:  ${{ github.action_path }}
       - id: foo
         uses: lmiguelcardoso/hello-world-composite-action@v1
         with:
