@@ -5,6 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+      - run: |
+          cd ${{ github.action_path }}
+          chmod +x goodbye.sh
+        shell: bash
+
       - uses: actions/checkout@v4
       - id: foo
         uses: lmiguelcardoso/hello-world-composite-action@v1
