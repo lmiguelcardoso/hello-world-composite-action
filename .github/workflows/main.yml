@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - uses: lmiguelcardoso/checkout@v4
+      - uses: actions/checkout@v4
       - id: foo
         uses: lmiguelcardoso/hello-world-composite-action@v1
         with:
